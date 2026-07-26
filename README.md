@@ -45,22 +45,25 @@ Abre `http://localhost:3000`.
 npm run generate
 ```
 
-Esto genera el sitio estático en `.output/public`, listo para cualquier
-hosting estático.
+Nitro detecta automáticamente el entorno de destino: en tu máquina genera el
+sitio en `.output/public`, pero al construir sobre la infraestructura de
+Netlify (variable de entorno `NETLIFY`) lo genera en `dist`. El
+`netlify.toml` de este proyecto ya está configurado para ese caso.
 
 ## Despliegue en Netlify
 
 **Opción A — Arrastrar y soltar:**
-1. Ejecuta `npm run generate`.
+1. Ejecuta `npm run generate` en tu máquina.
 2. Entra a [app.netlify.com](https://app.netlify.com) → *Add new site* →
    *Deploy manually*.
-3. Arrastra la carpeta `.output/public` generada.
+3. Arrastra la carpeta `.output/public` generada (ese es el nombre cuando
+   generas localmente, fuera del entorno de Netlify).
 
-**Opción B — Desde un repositorio Git:**
+**Opción B — Desde un repositorio Git (recomendado):**
 1. Sube este proyecto a GitHub/GitLab (sin `node_modules`, ver `.gitignore`).
 2. En Netlify: *Add new site* → *Import an existing project*.
 3. Build command: `npm run generate`
-   Publish directory: `.output/public`
+   Publish directory: `dist`
    (ya configurado en `netlify.toml`).
 
 ## Estructura del proyecto
