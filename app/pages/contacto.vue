@@ -15,7 +15,7 @@ const mensaje = ref('')
 const enviado = ref(false)
 
 const canales = [
-  { label: 'Correo', valor: 'contacto@isaacbrenes.dev', href: 'mailto:contacto@isaacbrenes.dev' },
+  { label: 'Correo', valor: 'isaacfelibrenes1904@gmail.com', href: 'mailto:isaacfelibrenes1904@gmail.com' },
   { label: 'GitHub', valor: 'github.com/felipe-del', href: 'https://github.com/felipe-del' },
   { label: 'Ubicación', valor: 'San José, Costa Rica', href: null }
 ]
@@ -23,7 +23,7 @@ const canales = [
 function enviarMensaje() {
   const asunto = encodeURIComponent(`Contacto desde el portafolio - ${nombre.value}`)
   const cuerpo = encodeURIComponent(`${mensaje.value}\n\n— ${nombre.value} (${email.value})`)
-  window.location.href = `mailto:contacto@isaacbrenes.dev?subject=${asunto}&body=${cuerpo}`
+  window.location.href = `mailto:isaacfelibrenes1904@gmail.com?subject=${asunto}&body=${cuerpo}`
   enviado.value = true
 }
 </script>
